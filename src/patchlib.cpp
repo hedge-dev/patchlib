@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
+#define VERSION "0.1"
 
 #include <iostream>
 #include <vector>
@@ -55,6 +56,8 @@ void PrintHelp()
 	printf("  -i <lib_path>   Input library path.\n");
 	printf("  -o <lib_path>   Output library path. If not specified, input library will be overwritten.\n");
 	printf("  -j              Input library is an object file.\n");
+	printf("  -h              Print this help.\n");
+	printf("  -v              Print version.\n");
 }
 
 void PatchObject(void* data)
@@ -115,6 +118,12 @@ int wmain(int argc, wchar_t** argv)
 		if (_wcsnicmp(argv[i], L"-h", 2) == 0)
 		{
 			PrintHelp();
+			return 0;
+		}
+
+		if (_wcsnicmp(argv[i], L"-v", 2) == 0)
+		{
+			printf(VERSION "\n");
 			return 0;
 		}
 
