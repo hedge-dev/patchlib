@@ -51,9 +51,10 @@ void PrintHelp()
 {
 	printf("Usage: patchlib.exe [options] <lib_path>\n");
 	printf("Options:\n");
-	printf("  -r <directive>  Remove directive.\n");
+	printf("  -r <directive>  Directive to remove.\n");
 	printf("  -i <lib_path>   Input library path.\n");
 	printf("  -o <lib_path>   Output library path. If not specified, input library will be overwritten.\n");
+	printf("  -j              Input library is an object file.\n");
 }
 
 void PatchObject(void* data)
